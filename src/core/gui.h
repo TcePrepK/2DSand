@@ -16,7 +16,7 @@ s32 off = 10;
 Rect bounds = { 0, off, w, h };
 
 void fixGUIs() {
-	s32 x = globalVariables.screenWidth - (w + off);
+	s32 x = GlobalVariables.screenWidth - (w + off);
 	bounds = { x, off, x + w, off + h };
 
 	for (GUI* gui : GUIs) {
@@ -37,7 +37,7 @@ void generateGUI(Element* e) {
 }
 
 s32 testForGUIs() {
-	Vector m = globalVariables.mouse;
+	Vector2D m = GlobalVariables.mouse;
 	if (m.x < bounds.left || m.x > bounds.right || m.y < bounds.top || m.y > bounds.bottom)
 		return -1;
 
@@ -47,7 +47,7 @@ s32 testForGUIs() {
 			return gui->id;
 	}
 
-	return globalVariables.currentMatID;
+	return GlobalVariables.currentMatID;
 }
 
 #endif // GUI_CPP
