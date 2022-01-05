@@ -3,6 +3,7 @@
 //
 
 #include "Chunk.h"
+#include "../utils/GlobalVariables.h"
 
 void Chunk::updateChanges() {
     for (int i = 0; i < changes.size(); i++) {
@@ -17,7 +18,8 @@ void Chunk::updateChanges() {
     }
 
     while (!changes.empty()) {
-        int r = randomVal(0, 1) % (int) changes.size();
+//        int r = GlobalVariables.randomNumberGenerator.randomInt(0, (int) changes.size());
+        int r = 0;
         auto &change = changes[r];
 
         std::shared_ptr<Chunk> toC = std::get<0>(change);

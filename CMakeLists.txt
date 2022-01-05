@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 
 project(2DSand CXX C)
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
@@ -15,7 +15,7 @@ add_executable(2DSand
         src/elements/ElementRegistry.cpp src/core/ShaderProgram.cpp
         src/display/DisplayShader.cpp src/display/DisplayRenderer.cpp
         src/utils/Rectangle.cpp src/world/World.cpp
-        src/world/Chunk.cpp src/elements/liquids/Water.h src/elements/liquids/Liquid.h)
+        src/world/Chunk.cpp src/core/RandomNumberGenerator.cpp)
 
 add_subdirectory(depends/GLFW)
 target_link_libraries(2DSand glfw)

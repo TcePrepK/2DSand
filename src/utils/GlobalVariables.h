@@ -12,6 +12,7 @@
 #include "../display/DisplayRenderer.h"
 #include "../world/World.h"
 #include "../elements/ElementRegistry.h"
+#include "../core/RandomNumberGenerator.h"
 
 struct GlobalVariables_ {
 public:

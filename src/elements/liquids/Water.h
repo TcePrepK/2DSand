@@ -13,7 +13,7 @@ public:
     Water() : Liquid(2, generateColor()) {}
 
     static Vector3D generateColor() {
-        float r = (float) randomVal(0, 10) / 20;
+        float r = RandomNumberGenerator::randomFloat(0, 1) / 2;
         float red = lerp(0.1f, 0.15f, r);
         float green = lerp(0.3f, 0.35f, r);
         float blue = lerp(0.7f, 0.8f, r);

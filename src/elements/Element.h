@@ -8,6 +8,7 @@
 #include "../utils/Maths.h"
 #include "../utils/Vector3D.h"
 #include "../utils/Vector2D.h"
+#include "../core/RandomNumberGenerator.h"
 
 class Element {
 private:

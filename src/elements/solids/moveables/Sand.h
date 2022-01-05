@@ -12,7 +12,7 @@ public:
     Sand() : Solid(1, generateColor()) {}
 
     static Vector3D generateColor() {
-        float r = (float) randomVal(0, 10) / 10.f;
+        float r = RandomNumberGenerator::randomFloat(0, 10) / 10.f;
         float red = lerp(0.8f, 1.f, r);
         float green = lerp(0.5f, 0.6f, r);
         float blue = lerp(0.2f, 0.25f, r);

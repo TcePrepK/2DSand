@@ -39,7 +39,8 @@ int main() {
     GLFWwindow *window = GlobalVariables.displayManager->getWindow();
     for (int x = 0; x < DisplayManager::WIDTH; x++) {
         for (int y = 0; y < DisplayManager::HEIGHT; y++) {
-            std::shared_ptr<Element> test = GlobalVariables.elementRegistry->getElement(randomVal(1, 2));
+            std::shared_ptr<Element> test = GlobalVariables.elementRegistry->getElement(
+                    RandomNumberGenerator::randomInt(1, 2));
             GlobalVariables.world->setElement(x, y, test);
         }
     }
