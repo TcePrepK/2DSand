@@ -32,6 +32,7 @@
 
 #include "src/utils/GlobalVariables.h"
 #include "src/core/TextureManager.h"
+#include "src/elements/ElementUpdater.h"
 
 int main() {
     GlobalVariables.init();
@@ -39,23 +40,27 @@ int main() {
     GLFWwindow *window = GlobalVariables.displayManager->getWindow();
     for (int x = 0; x < DisplayManager::WIDTH; x++) {
         for (int y = 0; y < DisplayManager::HEIGHT; y++) {
+            if (RandomNumberGenerator::randomFloat(0, 1) > 0.1) {
+                continue;
+            }
+
             std::shared_ptr<Element> test = GlobalVariables.elementRegistry->getElement(
                     RandomNumberGenerator::randomInt(1, 2));
-            GlobalVariables.world->setElement(x, y, test);
+            World::setElement(x, y, test);
         }
     }
 
     std::cout << "Starting main loop!" << std::endl;
     while (!glfwWindowShouldClose(window)) {
-        glClear(GL_COLOR_BUFFER_BIT);
-
         unsigned int image = TextureManager::create2DTexture(DisplayManager::WIDTH, DisplayManager::HEIGHT,
-                                                             GlobalVariables.world->worldBuffer);
+                                                             World::worldBuffer);
 
         GlobalVariables.displayRenderer->render(image);
         GlobalVariables.displayManager->updateDisplay();
 
         glDeleteTextures(1, &image);
+
+        ElementUpdater::update();
     }
 
     DisplayManager::cleanUp();

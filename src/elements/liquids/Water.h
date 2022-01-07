@@ -20,6 +20,10 @@ public:
         return {red, green, blue};
     }
 
+    Vector2D update(int x, int y) override {
+        return {x, y - 1};
+    }
+
     // Vector2D simulateWater(s32 x, s32 y, s32 id)
     // {
     //     s32 dir = randomVal(0, 1) ? 1 : -1;

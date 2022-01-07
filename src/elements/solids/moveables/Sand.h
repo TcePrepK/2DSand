@@ -20,8 +20,8 @@ public:
     }
 
     Vector2D update(int x, int y) override {
-        return {x, y};
-//        // Element *element = sandWorld.getPixel(x, y + 1);
+        return {x, y - 1};
+//        // Element *element = sandWorld.getElement(x, y + 1);
 //        if (world.getPixelDirect(x, y + 1) == nullptr)
 //            return Vector2D(x, y + 1);
 //        if (world.getPixelDirect(x + 1, y + 1) == nullptr)

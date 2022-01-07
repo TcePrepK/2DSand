@@ -22,10 +22,6 @@ public:
 
         displayManager = std::make_shared<DisplayManager>();
         displayRenderer = std::make_shared<DisplayRenderer>();
-
-        const unsigned int screenWidth = DisplayManager::WIDTH;
-        const unsigned int screenHeight = DisplayManager::HEIGHT;
-        world = std::make_shared<World>(screenWidth, screenHeight);
     }
 
     bool gameIsRunning = true;
@@ -37,7 +33,6 @@ public:
     std::shared_ptr<ElementRegistry> elementRegistry;
     std::shared_ptr<DisplayManager> displayManager;
     std::shared_ptr<DisplayRenderer> displayRenderer;
-    std::shared_ptr<World> world;
 
     Vector2D oldMouse;
     Vector2D mouse;

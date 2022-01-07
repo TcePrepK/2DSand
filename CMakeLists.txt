@@ -15,7 +15,8 @@ add_executable(2DSand
         src/elements/ElementRegistry.cpp src/core/ShaderProgram.cpp
         src/display/DisplayShader.cpp src/display/DisplayRenderer.cpp
         src/utils/Rectangle.cpp src/world/World.cpp
-        src/world/Chunk.cpp src/core/RandomNumberGenerator.cpp)
+        src/world/Chunk.cpp src/core/RandomNumberGenerator.cpp
+        src/elements/ElementUpdater.cpp)
 
 add_subdirectory(depends/GLFW)
 target_link_libraries(2DSand glfw)
