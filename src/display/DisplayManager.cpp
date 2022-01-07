@@ -38,9 +38,13 @@ void DisplayManager::init() {
     }
 }
 
-void DisplayManager::updateDisplay() const {
+void DisplayManager::updateDisplay() {
     glfwSwapBuffers(window);
     glfwPollEvents();
+
+    double time = glfwGetTime();
+    FPS = 1 / (time - lastTime);
+    lastTime = time;
 }
 
 void DisplayManager::cleanUp() {
@@ -49,4 +53,8 @@ void DisplayManager::cleanUp() {
 
 GLFWwindow *DisplayManager::getWindow() const {
     return window;
+}
+
+double DisplayManager::getFPS() const {
+    return FPS;
 }

@@ -61,6 +61,8 @@ int main() {
         glDeleteTextures(1, &image);
 
         ElementUpdater::update();
+
+        std::cout << "FPS: " << GlobalVariables.displayManager->getFPS() << std::endl;
     }
 
     DisplayManager::cleanUp();

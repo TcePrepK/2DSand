@@ -13,6 +13,9 @@
 class DisplayManager {
 private:
     GLFWwindow *window{};
+
+    double lastTime{};
+    double FPS{};
 public:
     static const unsigned int WIDTH = 512;
     static const unsigned int HEIGHT = 512;
@@ -23,11 +26,13 @@ public:
 
     void init();
 
-    void updateDisplay() const;
+    void updateDisplay();
 
     static void cleanUp();
 
     GLFWwindow *getWindow() const;
+
+    double getFPS() const;
 };
 
 
